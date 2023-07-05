@@ -15,9 +15,11 @@
         echo 'Значение переменной: ' . $var;
     ?><br>
     <?php
-        if('string') {
-            echo 'Условие выполнилось';
+        function showMinFloat(float $a, float $b, float $c) {
+            echo min($a, $b, $c);
         }
+
+        showMinFloat(2.5, 4.66, 0.7);
     ?>
     
 </html>
