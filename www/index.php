@@ -21,7 +21,9 @@
 
         showMinFloat(2.5, 4.66, 0.7);
     ?>
-    
+    <?php
+        echo __DIR__;
+    ?>
 </html>
 
 
