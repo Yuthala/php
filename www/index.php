@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+<?php
+    include __DIR__ . '/functions.php';
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,10 +24,16 @@
         }
 
         showMinFloat(2.5, 4.66, 0.7);
-    ?>
+    ?><br>
     <?php
         echo __DIR__;
-    ?>
+    ?><br>
+
+    
+        Число 2 <?= isEven(2) ? 'четное' : 'нечетное'?> <br>
+        Число 5 <?= isEven(5) ? 'четное' : 'нечетное' ?> <br>
+        Число 8 <?= isEven(8) ? 'четное' : 'нечетное' ?> <br>
+    
 </html>
 
 
