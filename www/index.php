@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
 <?php
+    $content = '<h1>Заголовок статьи</h1><p>текст статьи</p>';
+?>
+
+<?php
     include __DIR__ . '/header.php';
     include __DIR__ . '/sidebar.php';
     include __DIR__ . '/content.php';
