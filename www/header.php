@@ -27,6 +27,6 @@
 <body>
     <table id="layout">
     <tr>
-        <td colspan="2">HEADER</td>
+        <td colspan="2"><?=$header ?></td>
     </tr>
     <tr>
