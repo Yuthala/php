@@ -27,3 +27,20 @@ while ($i <= 10) {
     echo $i++;
     echo '<br>';
 }
+
+?>
+
+<?php
+$arr = [];
+$x = 354;
+
+while ($x <= 357) {
+    if ($x % 2 == 0) {
+        $arr[] = $x;
+    }
+    $x++;
+}
+
+foreach($arr as $value) {
+    echo $value . ', ';
+}
