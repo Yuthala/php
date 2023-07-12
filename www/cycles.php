@@ -44,3 +44,11 @@ while ($x <= 357) {
 foreach($arr as $value) {
     echo $value . ', ';
 }
+
+?>
+
+<?php
+for ($i = 4; $i < 10; $i++) {
+    echo $i;
+    echo '<br>';
+}
