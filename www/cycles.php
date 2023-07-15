@@ -56,15 +56,17 @@ for ($i = 4; $i < 10; $i++) {
 ?>
 
 <?php
-    $array = [2, 3, 6, 1, 23, 2, 56, 7, 1, 15];
-    $number = 1;
 
-    $isNumberFound = false;
-    foreach ($array as $item) {
-        echo 'Сравниваем с числом элемент ' . $item . '<br';
-        if ($item === $number) {
-            $isNumberFound = true;
-        }
+$array = [2, 3, 6, 1, 23, 2, 56, 7, 1, 15];
+$number = 1;
+
+$isNumberFound = false;
+foreach ($array as $item) {
+    echo 'Сравниваем с числом элемент ' . $item . '<br>';
+    if ($item === $number) {
+        $isNumberFound = true;
+        break;
     }
+}
 
-    echo $isNumberFound ? "Число найдено" : "Число не найдено";
+echo $isNumberFound ? 'Число найдено' : 'Число не найдено';
