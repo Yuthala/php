@@ -87,16 +87,16 @@ echo '<br>';
 ?>
 
 <?php
-    function checkNumber ($array = [4, 8, 16, 32, 64], $num) {
-        $array = false;
+    function checkNumber (array $array, int $num) {
         foreach($array as $item) {
             if ($item === $num) {
-                $array = true;
-                return $array;
+                return true;
             } else {
-                $array = false;
-                return $array;
+                return false;
             }
         }
 }
+
+checkNumber ([4, 8, 16, 32, 64], 2);
+?>
 
