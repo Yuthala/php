@@ -55,23 +55,23 @@ for ($i = 4; $i < 10; $i++) {
 
 ?>
 
-<?php
-
-$array = [2, 3, 6, 1, 23, 2, 56, 7, 1, 15];
-$number = 1;
-
-$isNumberFound = false;
-foreach ($array as $item) {
-    echo 'Сравниваем с числом элемент ' . $item . '<br>';
-    if ($item === $number) {
-        $isNumberFound = true;
-        break;
-    }
-}
-
-echo $isNumberFound ? 'Число найдено' : 'Число не найдено';
-
-?>
+//<?php
+//
+//$array = [2, 3, 6, 1, 23, 2, 56, 7, 1, 15];
+//$number = 1;
+//
+//$isNumberFound = false;
+//foreach ($array as $item) {
+//    echo 'Сравниваем с числом элемент ' . $item . '<br>';
+//    if ($item === $number) {
+//        $isNumberFound = true;
+//        break;
+//    }
+//}
+//
+//echo $isNumberFound ? 'Число найдено' : 'Число не найдено';
+//
+//?>
 
 <?php
 for ($i = 1; $i <= 20; $i++) {
@@ -81,5 +81,22 @@ for ($i = 1; $i <= 20; $i++) {
 
     echo $i;
     echo ' ';
+
 }
+echo '<br>';
 ?>
+
+<?php
+    function checkNumber ($array = [4, 8, 16, 32, 64], $num) {
+        $array = false;
+        foreach($array as $item) {
+            if ($item === $num) {
+                $array = true;
+                return $array;
+            } else {
+                $array = false;
+                return $array;
+            }
+        }
+}
+
