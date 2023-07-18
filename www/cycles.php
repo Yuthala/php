@@ -113,9 +113,9 @@ findNum([1, 45, 56, 3, 67], 18);
          foreach ($array as $item) {
              if ($item === $num) {
                  $count++;
-                 echo $count;
+                 echo $count . '<br>';
              } else {
-                 echo 'Номер не найден';
+                 echo 'Номер не найден' . '<br>';
              }
          }  return $count;
     }
@@ -131,5 +131,15 @@ $array = [
 if (array_key_exists('password', $array)) {
     echo $array['password'];
 } else {
-    echo 'Ключ "password" в массиве не найден';
+    echo 'Ключ "password" в массиве не найден' . '<br>';
     }
+?>
+
+<?php
+$numbers = [
+    1, 0, 7, 4
+];
+
+if (in_array(7, $numbers)) {
+    echo "В массиве есть число 7" . '<br>';
+}
