@@ -175,3 +175,14 @@ echo $string . '<br>';
 $array2 = [1, 2, 3, 4, 5];
 $arrayModified = array_slice($array2, 1, 3);
 var_dump ($arrayModified);
+?>
+
+<?php
+$string = '1 34 2 5 1 6 9 9 34';
+$modifiedString = explode(' ', $string);
+var_dump($modifiedString);
+echo '<br>';
+$newArray = array_unique($modifiedString);
+var_dump($newArray);
+
+
