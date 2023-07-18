@@ -143,3 +143,20 @@ $numbers = [
 if (in_array(7, $numbers)) {
     echo "В массиве есть число 7" . '<br>';
 }
+?>
+
+<?php
+
+$articlesFromIvan = [
+    'Article 1',
+    'Article 2'
+];
+
+$articlesFromMaria = [
+    'Article 3',
+    'Article 4'
+];
+
+$allArticles = array_merge($articlesFromIvan, $articlesFromMaria);
+
+var_dump($allArticles);
