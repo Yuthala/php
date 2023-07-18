@@ -109,5 +109,27 @@ findNum([1, 45, 56, 3, 67], 18);
 <?php
 
     function countInArray ( array $array, int $num) {
+        $count = 0;
+         foreach ($array as $item) {
+             if ($item === $num) {
+                 $count++;
+                 echo $count;
+             } else {
+                 echo 'Номер не найден';
+             }
+         }  return $count;
+    }
+    countInArray([1, 2, 5, 4, 5, 7, 89, 5], 5);
 
+?>
+
+<?php
+$array = [
+    'login' => 'admin'
+];
+
+if (array_key_exists('password', $array)) {
+    echo $array['password'];
+} else {
+    echo 'Ключ "password" в массиве не найден';
     }
