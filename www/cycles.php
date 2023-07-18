@@ -160,3 +160,18 @@ $articlesFromMaria = [
 $allArticles = array_merge($articlesFromIvan, $articlesFromMaria);
 
 var_dump($allArticles);
+
+?>
+
+<?php
+$array1 = [1, 3, 2];
+
+sort($array1);
+$string = implode(':', $array1);
+echo $string . '<br>';
+?>
+
+<?php
+$array2 = [1, 2, 3, 4, 5];
+$arrayModified = array_slice($array2, 1, 3);
+var_dump ($arrayModified);
