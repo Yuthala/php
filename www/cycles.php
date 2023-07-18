@@ -87,16 +87,27 @@ echo '<br>';
 ?>
 
 <?php
-    function checkNumber (array $array, int $num) {
-        foreach($array as $item) {
-            if ($item === $num) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+function findNum(array $array, int $num)
+{
+foreach ($array as $volume) {
+if ($volume === $num) {
+    echo 'Номер найден';
+return true;
+
+}
+}
+    echo 'Такого номера нет((';
+return false;
+
 }
 
-checkNumber ([4, 8, 16, 32, 64], 2);
-?>
+findNum([2, 4, 6, 8, 16], 4);
+echo '<br>';
+findNum([1, 45, 56, 3, 67], 18);
 
+?>
+<?php
+
+    function countInArray ( array $array, int $num) {
+
+    }
