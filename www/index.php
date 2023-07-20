@@ -10,13 +10,19 @@ $password = !empty($_GET['password']) ? $_GET['password'] : 'пароль не �
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Знакомство в GET запросами</title>
+    <title>Форма входа</title>
 </head>
 <body>
-    <p>
-        Переданный логин: <?= $login ?>
+    <form action="/login.php" method="GET">
+        <label>
+            Логин <input type="text" name="login">
+        </label>
         <br>
-        Переданный пароль: <?= $password ?>
-    </p>
+        <label>
+            Пароль <input type="password" name="password">
+        </label>
+        <br>
+        <input type="submit" value="Войти">
+    </form>
 </body>
 </html>
