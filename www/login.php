@@ -2,10 +2,12 @@
 $login = !empty($_GET['login']) ? $_GET['login'] : '';
 $password = !empty($_GET['password']) ? $_GET['password'] : '';
 
-if ($login === 'admin' && $password === 'Pa$$w0rd') {
-    $isAuthorized = true;
+if($login === 'admin' && $password === 'Pa$$w0rd') {
+    $authResult = "Авторизация прошла успешно";
+} else if ($login !== 'admin') {
+    $authResult = 'Пользователь не найден';
 } else {
-    $isAuthorized = false;
+    $authResult = 'Пароль неверный';
 }
 ?>
 
@@ -19,7 +21,7 @@ if ($login === 'admin' && $password === 'Pa$$w0rd') {
     <title>Авторизация</title>
 </head>
 <body>
-    <p><?= $isAuthorized ? 'Логин и пароль верные!' : 'Логин и пароль неверные!' ?></p>
+    <p><?= $authResult?></p>
 
 </body>
 </html>
