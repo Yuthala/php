@@ -1,7 +1,7 @@
 <?php
-$login = !empty($_GET['login']) ? $_GET['login'] : 'Логин не передан';
-$password = !empty($_GET['password']) ? $_GET['password'] : 'пароль не передан';
-?>
+//$login = !empty($_GET['login']) ? $_GET['login'] : 'Логин не передан';
+//$password = !empty($_GET['password']) ? $_GET['password'] : 'пароль не передан';
+//?>
 
 <!doctype html>
 <html lang="en">
@@ -13,7 +13,7 @@ $password = !empty($_GET['password']) ? $_GET['password'] : 'пароль не �
     <title>Форма входа</title>
 </head>
 <body>
-    <form action="/login.php" method="GET">
+    <form action="/login.php" method="POST">
         <label>
             Логин <input type="text" name="login">
         </label>

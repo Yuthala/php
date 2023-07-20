@@ -1,15 +1,15 @@
 <?php
-$login = !empty($_GET['login']) ? $_GET['login'] : '';
-$password = !empty($_GET['password']) ? $_GET['password'] : '';
+$login = !empty($_POST['login']) ? $_POST['login'] : '';
+$password = !empty($_POST['password']) ? $_POST['password'] : '';
 
-if($login === 'admin' && $password === 'Pa$$w0rd') {
-    $authResult = "Авторизация прошла успешно";
-} else if ($login !== 'admin') {
-    $authResult = 'Пользователь не найден';
-} else {
-    $authResult = 'Пароль неверный';
-}
-?>
+//if($login === 'admin' && $password === 'Pa$$w0rd') {
+//    $authResult = "Авторизация прошла успешно";
+//} else if ($login !== 'admin') {
+//    $authResult = 'Пользователь не найден';
+//} else {
+//    $authResult = 'Пароль неверный';
+//}
+//?>
 
 <!doctype html>
 <html lang="en">
@@ -21,7 +21,13 @@ if($login === 'admin' && $password === 'Pa$$w0rd') {
     <title>Авторизация</title>
 </head>
 <body>
-    <p><?= $authResult?></p>
+    <!--<p><?= $authResult?></p>-->
+
+    <p>
+        Переданный логин: <?= $login ?>
+        <br>
+        Переданный password: <?= $password ?>
+    </p>
 
 </body>
 </html>
