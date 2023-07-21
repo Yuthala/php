@@ -7,8 +7,12 @@ if (empty($_GET['operation'])) {
     return 'Не передана операция!';
 }
 
-if (empty($_GET['x1']) || empty($_GET['x2'])) {
+if (isset($_GET['x1'], $_GET['x2'])) {
     return 'Не переданы аргументы';
+}
+
+if (!is_numeric('$x1') || !is_numeric('$x2')) {
+    return "Введите число";
 }
 
 $x1 = $_GET['x1'];
