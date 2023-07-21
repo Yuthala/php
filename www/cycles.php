@@ -184,5 +184,35 @@ var_dump($modifiedString);
 echo '<br>';
 $newArray = array_unique($modifiedString);
 var_dump($newArray);
+echo'<hr>';
+?>
 
+<?php
+$string = '1 4 5 6 90 45 5 6 6';
+$arr = explode(' ', $string);
+
+$duplicatedValues = [];
+foreach ($arr as $item) {
+    if(!isset($duplicatedValues[$item])) {
+        $duplicatedValues[$item] = 1;
+    } else {
+        $duplicatedValues[$item]++;
+    }
+
+    if($duplicatedValues[$item] === 2) {
+        echo $item . ' ';
+    }
+}
+echo '<br';
+?>
+
+<?php
+$str = '1, 5, 6, 8, 2, 9, 11';
+
+$arr = explode(' ', $str);
+
+$sortedArray = rsort($arr);
+$max = $sortedArray[0] * $sortedArray[1];
+
+echo $max;
 
