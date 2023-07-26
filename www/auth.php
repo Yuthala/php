@@ -11,3 +11,13 @@ function checkAuth(string $login, string $password) : bool
     }
     return false;
 }
+
+function getUserLogin() : ?string {
+    $loginFromCookie = &_COOKIE['login'] ?? '';
+    $passwordFromCookie = $_COOKIE['password'] ?? '';
+
+    if (checkAuth($loginFromCookie, $passwordFromCookie)) {
+        return $loginFromCookie;
+    }
+    return null;
+}
