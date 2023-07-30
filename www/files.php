@@ -1,6 +1,8 @@
+<?php
 $file = fopen(__DIR__ . '/file.txt', 'r');
-for($i = 0; $i < 4; $i++) {
+//
+while (!feof($file)) {
     echo fgets($file);
-    echo'<br>';
+    echo '<br>';
 }
 fclose($file);
