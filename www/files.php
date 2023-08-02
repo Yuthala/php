@@ -14,3 +14,9 @@ for($i = 1; $i < 101; $i++) {
     fputs($file, $i . PHP_EOL);
 }
 fclose($file);
+?>
+
+<?php
+$file = fopen(__DIR__ . '/file3.txt', 'a');
+fputs($file, 'abc' . PHP_EOL);
+fclose($file);
