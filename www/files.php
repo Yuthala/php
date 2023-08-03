@@ -20,3 +20,13 @@ fclose($file);
 $file = fopen(__DIR__ . '/file3.txt', 'a');
 fputs($file, 'abc' . PHP_EOL);
 fclose($file);
+?>
+
+<?php
+$data = file_get_contents(__DIR__ . '/file.txt');
+
+echo $data;
+?>
+
+<?php
+
