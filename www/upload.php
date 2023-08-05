@@ -11,7 +11,8 @@ if (!empty($_FILES['attachment'])) {
     $newFilePath = __DIR__ . '/uploads/' . $srcFileName;
 
     if (file_exists($newFilePath)) {
-    } if (!move_uploaded_file($file['tmp_name'], $newFilePath)) {
+        $error = 'Файл с таким именем уже существует';
+    } elseif (!move_uploaded_file($file['tmp_name'], $newFilePath)) {
         $error = 'Ошибка при загрузке файла';
     } else {
         $result = 'http://myproject.loc/uploads/' . $srcFileName;
