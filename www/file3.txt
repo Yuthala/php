@@ -4,3 +4,6 @@ def
 abc
 abc
 def
+abc
+abc
+def
