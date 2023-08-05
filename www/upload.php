@@ -10,7 +10,8 @@ if (!empty($_FILES['attachment'])) {
     $srcFileName = $file['name'];
     $newFilePath = __DIR__ . '/uploads/' . $srcFileName;
 
-    if (!move_uploaded_file($file['tmp_name'], $newFilePath)) {
+    if (file_exists($newFilePath)) {
+    } if (!move_uploaded_file($file['tmp_name'], $newFilePath)) {
         $error = 'Ошибка при загрузке файла';
     } else {
         $result = 'http://myproject.loc/uploads/' . $srcFileName;
