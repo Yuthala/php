@@ -10,12 +10,15 @@ if (!empty($_FILES['attachment'])) {
     $srcFileName = $file['name'];
     $newFilePath = __DIR__ . '/uploads/' . $srcFileName;
 
+    /*проверяем расширение загружаемого файла*/
     $allowedExtensions = ['jpg', 'png', 'gif'];
     $extension = pathinfo($srcFileName, PATHINFO_EXTENSION);
     if (!in_array($extension, $allowedExtensions)) {
         $error = 'Загрузка файлов с таким расширением запрещена!';
+    /*проверяем, что нет ошибок при загрузке файла*/
     } if ($file['error'] !== UPLOAD_ERR_OK) {
         $error = 'Ошибка при загрузке файла';
+    /*проверяем, что в папке нет файла с таким же именем*/
     } elseif (file_exists($newFilePath)) {
         $error = 'Файл с таким именем уже существует';
     } elseif (!move_uploaded_file($file['tmp_name'], $newFilePath)) {
