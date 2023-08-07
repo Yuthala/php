@@ -1,35 +1,37 @@
 <?php
-$login = !empty($_POST['login']) ? $_POST['login'] : '';
-$password = !empty($_POST['password']) ? $_POST['password'] : '';
+if (!empty($_POST)) {
+    require __DIR__ . '/auth.php';
 
-//if($login === 'admin' && $password === 'Pa$$w0rd') {
-//    $authResult = "Авторизация прошла успешно";
-//} else if ($login !== 'admin') {
-//    $authResult = 'Пользователь не найден';
-//} else {
-//    $authResult = 'Пароль неверный';
-//}
-//?>
+    $login = $_POST['login'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-<!doctype html>
-<html lang="en">
+    if (checkAuth($login, $password)) {
+        setcookie('login', $login, 0, '/');
+        setcookie('password', $password, 0, '/');
+        header('Location: /index.php');
+    } else {
+        $error = 'Ошибка авторизации';
+    }
+}
+?>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Авторизация</title>
+    <title>Форма авторизации</title>
 </head>
 <body>
-    <!--<p><?= $authResult?></p>-->
 
-    <p>
-        Переданный логин: <?= $login ?>
-        <br>
-        Переданный password: <?= $password ?>
-    </p>
+<?php if (isset($error)): ?>
+<span style="color: red;">
+    <?= $error ?>
+</span>
+<?php endif; ?>
 
+<form action="/www/login.php" method="post">
+    <label for="login">Имя пользователя: </label><input type="text" name="login" id="login">
+    <br>
+    <label for="password">Пароль: </label><input type="password" name="password" id="password">
+    <br>
+    <input type="submit" value="Войти">
+</form>
 </body>
 </html>
-
-

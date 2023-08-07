@@ -1,23 +1,28 @@
 <?php
-function checkAuth(string $login, string $password) : bool
+
+function checkAuth(string $login, string $password): bool
 {
-    $users = require__DIR__ . '/usersDB.php';
+    $users = require __DIR__ . '/usersDB.php';
 
     foreach ($users as $user) {
         if ($user['login'] === $login
-            && $user['password'] === $password) {
+            && $user['password'] === $password
+        ) {
             return true;
         }
     }
+
     return false;
 }
 
-function getUserLogin() : ?string {
-    $loginFromCookie = &_COOKIE['login'] ?? '';
+function getUserLogin(): ?string
+{
+    $loginFromCookie = $_COOKIE['login'] ?? '';
     $passwordFromCookie = $_COOKIE['password'] ?? '';
 
     if (checkAuth($loginFromCookie, $passwordFromCookie)) {
         return $loginFromCookie;
     }
+
     return null;
 }
