@@ -15,6 +15,7 @@ if (!empty($text)) {
         $result = 'Ваше сообщение отправлено';
     }
 }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
