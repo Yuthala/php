@@ -1,3 +1,16 @@
+<?php
+$result = null;
+$text = $_POST['text'] ?? '';
+
+if (!empty($text)) {
+    $datetime = date(DATE_ATOM);
+    $isWrote = file_put_contents(
+        __DIR__ . '/../private/feedback.txt',
+        $datetime . PHP_EOL . $text . PHP_EOL . PHP_EOL,
+        FILE_APPEND
+    ) 
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
