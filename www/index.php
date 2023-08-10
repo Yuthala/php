@@ -14,7 +14,8 @@ foreach ($files as $fileName) {
 }
 
 foreach ($links as $link):?>
-    <a href="<?= $link ?>"><img src="<?= $link ?>" height="80px"></a>
+    <a href="<?= $link ?>">
+    <img src="<?= $link ?>" height="80px"></a>
 <?php endforeach; ?>
 </body>
 </html>
