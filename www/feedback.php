@@ -30,6 +30,8 @@ if (!empty($text)) {
         <form action="feedback.php" method="post">
             <label for="text">Введите ваш текст:</label><br>
             <textarea name="text" id="text" cols="55" rows="5"></textarea>
+            <label for="email">Введите ваш e-mail:</label>
+            <input type="text" name="email" id="email">
             <input type="submit" value="Отправить">
         </form>
     </div>
