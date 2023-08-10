@@ -8,7 +8,12 @@ if (!empty($text)) {
         __DIR__ . '/../private/feedback.txt',
         $datetime . PHP_EOL . $text . PHP_EOL . PHP_EOL,
         FILE_APPEND
-    ) 
+    ) !== false;
+    if ($isWrote === false) {
+        $result = 'Не удалось отправить сообщение';
+    } else {
+        $result = 'Ваше сообщение отправлено';
+    }
 }
 
 <!DOCTYPE html>
