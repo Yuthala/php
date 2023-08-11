@@ -3,6 +3,7 @@
     <title>Фотоальбом</title>
 </head>
 <body>
+    <p>This is test paragraph</p>
 <?php
 $files = scandir(__DIR__ . '/uploads');
 $links = [];
